@@ -1,1 +1,101 @@
-hello!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamzid Shikto</title>
+    <link rel="icon" href="https://www.tamzidshikto.rf.gd/ts.png">
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            margin: 0;
+        }
+        .root{
+            position: absolute;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: aqua;
+        }
+        #bg{
+            height: auto;
+        }
+        .top{
+            position: absolute;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .top_child{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .dp_bg{
+            height: 200px;
+            aspect-ratio: 1;
+            background-color: white;
+            padding: 10px;
+            border-radius: 100%;
+            box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.3);
+        }
+        .dp{
+            height: 100%;
+        }
+        .space{
+            height: 10px;
+            width: 10px;
+        }
+        .space2{
+            height: 50px;
+            width: 50px;
+        }
+        .name{
+            font-size: 40px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 2px 10px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div style="overflow: hidden;" class="root">
+        <img id="bg" src="cover_art.jpg">
+        <div class="top">
+            <div class="top_child">
+                <div class="dp_bg">
+                    <img class="dp" src="ts.png">
+                </div>
+                <div class="space"> </div>
+                <span class="name">Tamzid Shikto</span>
+                <div class="space2">sdsds</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = Resize;
+        window.addEventListener('resize', Resize);
+        let bgImage = document.getElementById("bg"); // "bg" is id of the background image element
+
+        function Resize() {
+            let windowAspectRatio = window.innerHeight / window.innerWidth;
+            let bgAspectRatio = bgImage.clientHeight / bgImage.clientWidth;
+            if(windowAspectRatio < bgAspectRatio){
+                bgImage.style.height = "auto";
+                bgImage.style.width = "100%";
+            }else{
+                bgImage.style.height = "100%";
+                bgImage.style.width = "auto";
+            }
+        }
+    </script>
+</body>
+</html>
